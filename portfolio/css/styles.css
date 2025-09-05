@@ -1,0 +1,139 @@
+:root {
+  --color-primary: #0ea5e9;
+  --color-accent: #22c55e;
+  --color-bg: #0b0c10;
+  --color-text: #e5e7eb;
+  --color-text-muted: #94a3b8;
+  --color-border: #1f2937;
+  --color-surface: #12141a;
+
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+
+  --width-max: 600px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  gap: var(--space-3);
+}
+
+nav a {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  border-radius: 10px;
+}
+
+nav a:hover {
+  background-color: var(--color-surface);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--space-1);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border-radius: 10px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    0deg,
+    rgba(14, 165, 233, 0.08),
+    rgba(14, 165, 233, 0.18)
+  );
+  border: 1px solid #0b4d66;
+  color: #cff0ff;
+}
+
+.btn:hover {
+  background-color: #0e1116;
+  text-decoration: none;
+}
+
+.col {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--space-3);
+  padding: var(--space-4);
+  min-width: 280px;
+  flex: 1 1 320px;
+}
+
+.container {
+  max-width: var(--width-max);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  /* border-bottom: 1px solid var(--color-border); */
+}
+
+.title-group h1 {
+  margin: 0.25rem 0 0;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.title-group p {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.brand {
+  display: flex;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+}
