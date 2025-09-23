@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caixa de Mensagens</title>
+    <style>
+      #messageBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #a0a0a0;
+        border: 2px solid #666;
+        border-radius: 8px;
+        padding: 20px 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        visibility: hidden;
+      }
+
+      #messageBtn {
+        margin-top: 30px;
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="messageBox">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis doloremque
+      incidunt eius quam fuga maxime nisi laborum. Reprehenderit, vel? Quia
+      nulla sapiente minima suscipit nam, alias odio similique molestias
+      perspiciatis.
+    </div>
+    <button id="messageBtn">Mostrar Mensagem</button>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const msgBtn = document.getElementById("messageBtn");
+        msgBtn.addEventListener("click", toggleMessage);
+      });
+
+      function toggleMessage() {
+        const msgBox = document.getElementById("messageBox");
+        console.log(">>", msgBox.style);
+        if (msgBox.style.visibility === "visible") {
+          msgBox.style.visibility = "hidden";
+        } else {
+          msgBox.style.visibility = "visible";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript #1</title>
+  </head>
+  <body>
+    <main>
+      <h1>UESPI Parnaíba</h1>
+      <img <img src="./uespi.png" alt="UESPI" />
+      <h2></h2>
+      <script>
+        let counter = 0;
+
+        const toggleColor = function () {
+          const head = document.querySelector("h1");
+          if (head.style.color == "red") {
+            head.style.color = "black";
+          } else {
+            head.style.color = "red";
+          }
+          counter++;
+          const clicks = document.querySelector("h2");
+          clicks.textContent = counter.toString();
+        };
+
+        window.addEventListener("load", function () {
+          console.log(">>> load()");
+          const logo = document.querySelector("img");
+          logo.onclick = toggleColor;
+          const clicks = document.querySelector("h2");
+
+          clicks.addEventListener("click", function () {
+            const clicks = document.querySelector("h2");
+            clicks.textContent = "";
+          });
+        });
+
+        window.addEventListener("DOMContentLoaded", function () {
+          console.log(">>> DOMContentLoader()");
+        });
+      </script>
+    </main>
+  </body>
+</html>
