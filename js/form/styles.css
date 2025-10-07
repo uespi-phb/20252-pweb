@@ -1,0 +1,13 @@
+label,
+input {
+  display: block;
+}
+
+label,
+button {
+  margin-top: 0.75rem;
+}
+
+span {
+  color: red;
+}

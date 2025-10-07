@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postman Echo</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        border: 0;
+        border-radius: 4px;
+        background-color: #007aff;
+        color: white;
+        cursor: pointer;
+      }
+      #status {
+        font-size: 18px;
+        color: #333;
+      }
+      .heavy {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exemplo JS Assíncrono</h1>
+    <button onclick="makeRequest()">Requisitar</button>
+    <p>Status: <span id="status">Aguardando</span></p>
+    <p class="heavy">Tempo: <span id="timer" class="heavy">0</span>s</p>
+    <p>Resposta: <span id="response"></span></p>
+    <script>
+      let counter = 0
+
+      setInterval(() => {
+        const timer = document.getElementById('timer')
+        timer.textContent = ++counter
+      }, 1000)
+
+      function makeRequest() {
+        const status = document.getElementById('status')
+
+        status.textContent = 'Requisição iniciada...'
+
+        fetch('https://httpbin.org/delay/5')
+          .then((res) => res.text())
+          .then((data) => {
+            const response = document.getElementById('response')
+            response.textContent = data
+            status.textContent = 'Requisição concluída!'
+          })
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+li {
+  background-color: aquamarine;
+  width: 12rem;
+  border: 1px solid green;
+  border-radius: 4px;
+  margin: 2px 0;
+  padding: 2px 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li > span:last-child {
+  font-size: 70%;
+}
