@@ -8,7 +8,7 @@ function loadCatFact() {
       return r.json()
     })
     .then((data) => {
-      output.textContent = `🐱 Fato: ${data.fact}\n📏 Tamanho: ${data.length}`
+      output.textContent = `Fato: ${data.fact}\nTamanho: ${data.length}`
     })
     .catch((error) => {
       output.textContent = `Erro: ${error.message}`
@@ -29,7 +29,7 @@ function loadUserAndPosts() {
       const userName = `${user.name.first} ${user.name.last}`
       const userId = user.email.length // apenas para exemplo
 
-      output.textContent = `👤 Usuário: ${userName} (ID: ${userId})\nBuscando posts...`
+      output.textContent = `Usuário: ${userName} (ID: ${userId})\nBuscando posts...`
 
       return fetch(
         `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
@@ -41,7 +41,7 @@ function loadUserAndPosts() {
     })
     .then((posts) => {
       const postTitles = posts.map((p) => `- ${p.title}`).join('\n')
-      output.textContent += `\n📝 Posts:\n${
+      output.textContent += `\nPosts:\n${
         postTitles || '(nenhum post encontrado)'
       }`
     })
