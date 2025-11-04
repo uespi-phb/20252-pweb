@@ -1,0 +1,107 @@
+:root {
+  --bg-color: #0e1116;
+  --muted-color: #20242c;
+  --card-color: #151922;
+  --text-color: #e9eef7;
+  --subtext-color: #a8b3c8;
+  --brand-color: #4ca3ff;
+  --ok-color: #66d9a3;
+  --warn-color: #ffb86b;
+  --error-color: #ff6b6b;
+  --radius-size: 14px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(1000px 500px at 20% 0%, #1a1f2b 0%, #0d1016 60%),
+    var(--bg-color);
+  color: var(--text-color);
+  font:
+    16px/1.4 system-ui,
+    Segoi UI,
+    Roboto,
+    Ubuntu,
+    Catarell,
+    'Helvetica Neue',
+    Arial;
+}
+
+.app-header,
+.app-footer {
+  text-align: center;
+  padding: 1.25rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--subtext-color);
+}
+
+.container {
+  width: min(960px, 90vw);
+  background-color: #a8b3c8;
+  margin: 0 auto 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--card-color), #11141b);
+  border: 1px solid #1f2531;
+  border-radius: var(--radius-size);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  padding: 1rem;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0;
+  color: var(--subtext-color);
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+}
+
+#city {
+  background: var(--muted-color);
+  border: 1px solid #2a3140;
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  color: var(--text-color);
+  outline: none;
+}
+
+#city:focus {
+  border-color: var(--brand-color);
+  box-shadow: 0 0 0 3px rgba(76, 163, 255, 0.15);
+}
+
+#btn-search {
+  background: linear-gradient(180deg, #4ca3ff, #2e7dd9);
+  color: #071018;
+  font-weight: normal;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+
+#btn-search:hover {
+  filter: brightness(1.15);
+}
+
+#btn-search:active {
+  transform: translateY(2px);
+}

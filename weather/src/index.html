@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mini dashboard de clima" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Dashboard do Tempo</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Dashboard do Tempo</h1>
+      <p class="subtitle">Atualização sobre clima de forma simples</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <form id="frm-weather" class="form" novalidate>
+          <label for="city">Cidade</label>
+          <div class="input-row">
+            <input
+              id="city"
+              name="city"
+              type="text"
+              placeholder="Ex: Parnaíba"
+              required
+            />
+            <button id="btn-search" type="submit">Buscar</button>
+          </div>
+          <p>Dica: use acentuação quando necessário (ex: Piauí)</p>
+        </form>
+      </section>
+      <section>
+        <p>2ª Seção</p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Dashboard do Tempo - UESPI 2025</small>
+    </footer>
+  </body>
+</html>
