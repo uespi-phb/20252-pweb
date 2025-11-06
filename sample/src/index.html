@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pocket Weather Dashboard</title>
+  <link rel="stylesheet" href="./style.css" />
+  <meta name="description" content="Mini dashboard de clima em HTML, CSS e JS puro" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Pocket Weather Dashboard</h1>
+    <p class="subtitle">HTML + CSS + JS puro</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <form id="weather-form" class="form" autocomplete="off" novalidate>
+        <label for="city" class="label">Cidade</label>
+        <div class="input-row">
+          <input
+            id="city"
+            name="city"
+            class="input"
+            type="text"
+            placeholder="Ex.: Teresina"
+            aria-label="Nome da cidade"
+            required
+          />
+          <button id="btn-search" type="submit" class="btn">Buscar</button>
+        </div>
+        <p class="help">Dica: use acentuação quando necessário (ex.: São Paulo).</p>
+      </form>
+    </section>
+
+    <section class="card" aria-live="polite">
+      <div id="status" class="status" hidden></div>
+
+      <div id="result" class="result" hidden>
+      
+        <div class="now">
+          <div class="icon" id="icon" aria-hidden="true">⛅</div>
+          <div class="meta">
+            <h2 id="city-name" class="city-name">—</h2>
+            <p id="condition" class="condition">—</p>
+          </div>
+          <div class="temp">
+            <span id="temp" class="temp-value">—</span>
+            <span class="temp-unit">°C</span>
+          </div>
+        </div>
+
+        <dl class="grid">
+          <div>
+            <dt>Sensação</dt>
+            <dd id="feels">— °C</dd>
+          </div>
+          <div>
+            <dt>Umidade</dt>
+            <dd id="humidity">— %</dd>
+          </div>
+          <div>
+            <dt>Vento</dt>
+            <dd id="wind">— km/h</dd>
+          </div>
+          <div>
+            <dt>Mín / Máx</dt>
+            <dd id="minmax">— / — °C</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>OpenWeatherMap • Projeto didático</small>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
+

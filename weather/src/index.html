@@ -30,13 +30,51 @@
           <p>Dica: use acentuação quando necessário (ex: Piauí)</p>
         </form>
       </section>
-      <section>
-        <p>2ª Seção</p>
+
+      <section class="card">
+        <div id="status" class="status">Status message</div>
+
+        <div id="result" class="result">
+          <div class="now">
+            <div id="icon" class="icon" aria-hidden="true">⛅</div>
+
+            <div class="meta">
+              <h2 id="city-name" class="city-name">City Name</h2>
+              <p id="condition" class="condition">Condition</p>
+            </div>
+
+            <div class="temp">
+              <span id="temp-value" class="temp-value">24,5</span>
+              <span id="temp-unit">°C</span>
+            </div>
+          </div>
+
+          <dl class="grid">
+            <div>
+              <dt>Sensação</dt>
+              <dd>24,5°C</dd>
+            </div>
+            <div>
+              <dt>Umidade</dt>
+              <dd>75%</dd>
+            </div>
+            <div>
+              <dt>Vento</dt>
+              <dd>27,5km/h</dd>
+            </div>
+            <div>
+              <dt>Min / Max</dt>
+              <dd>21°C / 32°C</dd>
+            </div>
+          </dl>
+        </div>
       </section>
     </main>
 
     <footer class="app-footer">
       <small>Dashboard do Tempo - UESPI 2025</small>
     </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>
