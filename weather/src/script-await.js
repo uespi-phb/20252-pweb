@@ -14,34 +14,27 @@ const showStatus = (message, kind = 'info') => {
 }
 
 const renderWeatherData = (data) => {
-  console.log('D1: renderWeatherData')
-  console.log('DATA:', data)
+  console.log('renderWeatherData')
 }
 
 const fetchWeather = async (cityName) => {
   const baseUrl = 'https://api.openweathermap.org/data/2.5/weather'
   const url = `${baseUrl}?q=${cityName}&appid=${API_KEY}&units=metric&lang=pt_br`
 
-  console.log('D2:', url)
-  const promise = fetch(url, { method: 'GET' })
-
-  return promise.then((response) => {
-    console.log('D3:', response)
-    return response.json()
-  })
+  console.log(url)
+  const result = await fetch(url, { method: 'GET' })
+  console.log('>>', result.status)
 }
 
-const getWeather = (event) => {
-  event.preventDefault()
-
+const getWeather = async () => {
   const cityName = $('#city').value.trim()
   if (!cityName) {
     showStatus('Informe o nome de uma cidade.', 'error')
     return
   }
 
-  console.log('D5: getWeather')
-  fetchWeather(cityName).then((data) => renderWeatherData(data))
+  const data = await fetchWeather(cityName)
+  renderWeatherData(data)
 }
 
 window.addEventListener('DOMContentLoaded', () => {

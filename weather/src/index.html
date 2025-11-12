@@ -15,7 +15,7 @@
 
     <main class="container">
       <section class="card">
-        <form id="frm-weather" class="form" novalidate>
+        <form id="frm-weather" class="form" method="get" novalidate>
           <label for="city">Cidade</label>
           <div class="input-row">
             <input
@@ -32,7 +32,7 @@
       </section>
 
       <section class="card">
-        <div id="status" class="status">Status message</div>
+        <div id="status" class="status" hidden>Status message</div>
 
         <div id="result" class="result">
           <div class="now">

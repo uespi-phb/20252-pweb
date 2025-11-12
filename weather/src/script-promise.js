@@ -15,7 +15,6 @@ const showStatus = (message, kind = 'info') => {
 
 const renderWeatherData = (data) => {
   console.log('D1: renderWeatherData')
-  console.log('DATA:', data)
 }
 
 const fetchWeather = async (cityName) => {
@@ -25,8 +24,8 @@ const fetchWeather = async (cityName) => {
   console.log('D2:', url)
   const promise = fetch(url, { method: 'GET' })
 
-  return promise.then((response) => {
-    console.log('D3:', response)
+  return promise.then((result) => {
+    console.log('D3:', result)
     return response.json()
   })
 }
