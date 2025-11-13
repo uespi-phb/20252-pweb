@@ -15,6 +15,7 @@ const showStatus = (message, kind = 'info') => {
 
 const renderWeatherData = (data) => {
   console.log('D1: renderWeatherData')
+  console.log('DATA:', data)
 }
 
 const fetchWeather = async (cityName) => {
@@ -22,10 +23,9 @@ const fetchWeather = async (cityName) => {
   const url = `${baseUrl}?q=${cityName}&appid=${API_KEY}&units=metric&lang=pt_br`
 
   console.log('D2:', url)
-  const promise = fetch(url, { method: 'GET' })
 
-  return promise.then((result) => {
-    console.log('D3:', result)
+  return fetch(url, { method: 'GET' }).then((response) => {
+    console.log('D3:', response)
     return response.json()
   })
 }
@@ -41,9 +41,12 @@ const getWeather = (event) => {
 
   console.log('D5: getWeather')
   fetchWeather(cityName).then((data) => renderWeatherData(data))
+  console.log('D6: getWeather')
 }
 
+console.log('>> Before DOMContentLoaded')
 window.addEventListener('DOMContentLoaded', () => {
+  console.log('>> After DOMContentLoaded')
   $('#frm-weather').addEventListener('submit', getWeather)
   $('#city').focus()
 })
