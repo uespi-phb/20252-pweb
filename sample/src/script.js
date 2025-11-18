@@ -1,5 +1,5 @@
 
-const API_KEY = 'API_KEY' 
+const API_KEY = '9ee8bbfa29617285f3faee067ee2e39e' 
 
 const $ = (sel) => document.querySelector(sel)
 const $$ = (sel) => document.querySelectorAll(sel)
@@ -20,21 +20,21 @@ const UI = {
 }
 
 const ICONS = {
-  Thunderstorm: '⛈️',
-  Drizzle: '🌦️',
-  Rain: '🌧️',
-  Snow: '❄️',
-  Mist: '🌫️',
-  Smoke: '🌫️',
-  Haze: '🌫️',
-  Dust: '🌪️',
-  Fog: '🌫️',
-  Sand: '🌪️',
-  Ash: '🌫️',
-  Squall: '🌬️',
-  Tornado: '🌪️',
-  Clear: '☀️',
-  Clouds: '⛅'
+  Thunderstorm: '⛈️',   // Tempestade
+  Drizzle: '🌦️',        // Garoa
+  Rain: '🌧️',           // Chuva
+  Snow: '❄️',           // Neve
+  Mist: '🌫️',           // Névoa
+  Smoke: '🌫️',          // Fumaça
+  Haze: '🌫️',           // Neblina
+  Dust: '🌪️',           // Poeira
+  Fog: '🌫️',            // Nevoeiro
+  Sand: '🌪️',           // Areia
+  Ash: '🌫️',            // Cinzas
+  Squall: '🌬️',         // Rajada de vento
+  Tornado: '🌪️',        // Tornado
+  Clear: '☀️',          // Céu limpo
+  Clouds: '⛅',         // Nuvens
 }
 
 function show(node) { node.hidden = false }
@@ -51,7 +51,7 @@ function setLoading(on) {
   else hide(UI.status)
 }
 
-function toKmH(ms) {
+function MStoKmH(ms) {
   return Math.round(ms * 3.6)
 }
 
@@ -66,7 +66,7 @@ function render(data) {
   const temp = Math.round(data.main?.temp ?? 0)
   const feels = Math.round(data.main?.feels_like ?? 0)
   const hum = Math.round(data.main?.humidity ?? 0)
-  const wind = toKmH(data.wind?.speed ?? 0)
+  const wind = MStoKmH(data.wind?.speed ?? 0)
   const tmin = Math.round(data.main?.temp_min ?? 0)
   const tmax = Math.round(data.main?.temp_max ?? 0)
 
